@@ -17,7 +17,7 @@ I'm not responsible if you mess up your environment.  You probably already messe
 
 These scripts are tuned for my naming conventions.  It should be mostly trivial to adjust templates to meet your naming needs.
 
-These scripts are writting in python 2.7.  
+These scripts are written in and meant for python 2.7
 
 Don't like it any of the scripts in this repo or think they are trash? 
 
