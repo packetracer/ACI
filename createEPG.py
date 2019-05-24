@@ -65,3 +65,11 @@ def createEPG(vlan,ap,tenant,cookie):
 
 
 cookie = getCookie()
+for vlan in vlans:
+        result = createEPG(vlan,ap,tenant,cookie)
+        if result[0]==200:
+                print result[1]+" created successfully"
+        else:
+                print "Failure creating "+result[1]
+                print result[2]
+
