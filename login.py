@@ -32,9 +32,12 @@ def login():
                 return "Too many redirects."
         except requests.exceptions.RequestException as e:
                 return "Error " + str(e)
-
+#IF LOGIN SUCCESSFUL, RETURN APIC COOKIE
 def main():
         print login()
+        #THIS IS THE VALUE of "APIC-cookie"
+        #DO WHAT YOU WANT WITH THIS OUTPUT.  In my system I will write the cookie to a file "cookie" which will be read
+        #by other scripts
 
 if __name__== "__main__":
         main()
