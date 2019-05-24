@@ -13,7 +13,9 @@ Without my github repo, I am useless.
 
 ------------
 Notes from author:
-I'm not responsible if you mess up your environment.  You probably already messed it up by buying ACI in the first place.
+I'm not responsible if you mess up your environment.  
+You probably already messed it up by buying ACI in the first place.
+Safety not guaranteed.
 
 These scripts are tuned for my naming conventions.  It should be mostly trivial to adjust templates to meet your naming needs.
 
