@@ -1,3 +1,4 @@
+#ASSIGN STATIC PORTS TO EPG OF TYPE VPC
 #THIS IS WHERE THINGS GET REALLY ORG SPECIFIC.  THIS ONE REQUIRES A LIST OF VPCS TO ASSOCIATE TO STATIC PORTS.
 import requests
 from jinja2 import Template
@@ -19,9 +20,11 @@ def getCookie():
         cookie = login.login(user,pwd)
         if "ERROR" not in cookie:
                 return cookie
-
+        
+#GRAB TENANT AND APPLICATION PROFILE AS USER INPUT
 tenant = raw_input("Tenant Name: ")
 ap = raw_input("Application Profile: ")
+#GRAB VLANS AND VPCS FROM RESPECTIVE LIST FILES
 vlans = []
 vpcs = []
 f = open("vlans.list","r")
@@ -31,7 +34,8 @@ f.close()
 f = open("vpcs.list","r")
 for vpc in f.read().splitlines():
         vpcs.append(vpc)
-
+        
+#CREATE VPC ASSOCIATIONS FOR EACH EPG
 def associateStaticVPCs(vlan,ap,tenant,cookie):
         urltemplate = "https://{{hostname}}/api/node/mo/uni/tn-{{TENANT}}/ap-{{AP}}/epg-{{VLAN}}-EPG.json"
         ut = Template(urltemplate)
@@ -59,7 +63,7 @@ def associateStaticVPCs(vlan,ap,tenant,cookie):
                 out.append(result.text)
         return out
 
-
+################
 cookie = getCookie()
 for vlan in vlans:
         results = associateStaticVPCs(vlan,ap,tenant,cookie)
