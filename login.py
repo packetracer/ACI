@@ -1,3 +1,4 @@
+#LOGIN SCRIPT TO GATHER AUTHORIZATION COOKIE- NEEDED BY OTHER SCRIPTS FOR LOGIN
 import requests
 import sys
 import getpass
