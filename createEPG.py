@@ -1,3 +1,4 @@
+#CREATES EPGS BASED ON LIST OF VLANS
 import requests
 from jinja2 import Template
 #use pip install jinja2 if you get a module error
@@ -19,14 +20,16 @@ def getCookie():
         if "ERROR" not in cookie:
                 return cookie
 
+#GRAB TENANT AND APPLICATION PROFILE AS USER INPUT
 tenant = raw_input("Tenant Name: ")
 ap = raw_input("Application Profile: ")
+#GET LIST OF VLANS IN VLANS.LIST
 vlans = []
-f = open("vlans2.list","r")
-#for vlan in f.read().splitlines():
-#       vlans.append()
+f = open("vlans.list","r")
 for vlan in f.read().splitlines():
         vlans.append(vlan)
+
+#CREATE EPG FOR VLAN
 def createEPG(vlan,ap,tenant,cookie):
         urltemplate = "https://{{hostname}}/api/node/mo/uni/tn-{{tenant}}/ap-{{AP}}/epg-{{VLAN}}-EPG.json"
         ut = Template(urltemplate)
@@ -63,8 +66,9 @@ def createEPG(vlan,ap,tenant,cookie):
         out.append(result.text)
         return out
 
-
+################3
 cookie = getCookie()
+#FOR EACH VLAN IN VLAN LIST, CREATE EPG
 for vlan in vlans:
         result = createEPG(vlan,ap,tenant,cookie)
         if result[0]==200:
@@ -72,4 +76,3 @@ for vlan in vlans:
         else:
                 print "Failure creating "+result[1]
                 print result[2]
-
