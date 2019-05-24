@@ -9,7 +9,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 urllib3.disable_warnings(urllib3.exceptions.SNIMissingWarning)
 urllib3.disable_warnings(urllib3.exceptions.InsecurePlatformWarning)
 #CONSTANTS
-hostname = 'apic.lgh.org'
+hostname = '<IP OR FQDN OF APIC>'
 
 #LOGIN AND GET COOKIE
 def getCookie():
