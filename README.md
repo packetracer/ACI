@@ -1,5 +1,5 @@
 # Python ACI Scripts
-These is my python script repo for Cisco ACI.
+This is my python script repo for Cisco ACI.
 
 There are many like it, but this one is mine. 
 
