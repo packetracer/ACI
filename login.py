@@ -22,8 +22,7 @@ def login(user,pwd):
                 if "DENIED" in str(result):
                         return "ERROR: Login denied by APIC"
                 else:
-                        cookie = result['imdata']['aaaLogin']['@token']
-                        return cookie
+                        return result['imdata']['aaaLogin']['@token']
         except requests.exceptions.Timeout:
                 return "ERROR: Request timed out."
         except requests.exceptions.TooManyRedirects:
