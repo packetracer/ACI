@@ -10,6 +10,8 @@ I must master it as I must master my life.
 My github repo, without me, is useless. 
 
 Without my github repo, I am useless. 
+------------
+Table of Contents:
 
 ------------
 Notes from author:
