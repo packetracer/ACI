@@ -22,8 +22,8 @@ getPortStatus.py            | *Given user input, display details of port*
 intprofile.py               | *Given user input range of ports, create port profile for each port in range set to "DISABLED" port profile*
 listEPGs.py                 | *Given user input, list EPGs under Tenant / Application Profile*
 login.py	            | *Definition of login function for each script*
-setPort.py	          | *Given user input, set port to profile from static list of profiles*
-vlans.list	          | *SAMPLE VLANS.LIST FILE*
+setPort.py	            | *Given user input, set port to profile from static list of profiles*
+vlans.list	            | *SAMPLE VLANS.LIST FILE*
 vpcs.list	            |  *SAMPLE VPCS.LIST FILE*
 ```
 ------------
