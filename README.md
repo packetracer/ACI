@@ -24,7 +24,7 @@ listEPGs.py                 | *Given user input, list EPGs under Tenant / Applic
 login.py	            | *Definition of login function for each script*
 setPort.py	            | *Given user input, set port to profile from static list of profiles*
 vlans.list	            | *SAMPLE VLANS.LIST FILE*
-vpcs.list	            |  *SAMPLE VPCS.LIST FILE*
+vpcs.list	            | *SAMPLE VPCS.LIST FILE*
 ```
 ------------
 Notes from author:
