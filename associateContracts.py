@@ -9,7 +9,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 urllib3.disable_warnings(urllib3.exceptions.SNIMissingWarning)
 urllib3.disable_warnings(urllib3.exceptions.InsecurePlatformWarning)
 #CONSTANTS
-hostname = 'apic.lgh.org'
+hostname = '<APIC IP OR FQDN HERE>'
 
 #LOGIN AND GET COOKIE
 def getCookie():
@@ -19,16 +19,19 @@ def getCookie():
         if "ERROR" not in cookie:
                 return cookie
 
+#ACCEPT USER INPUT FOR TENANT, APPLICATION PROFILE, PROVIDER AND CONSUMER CONTRACT NAMES
 tenant = raw_input("Tenant Name: ")
 ap = raw_input("Application Profile: ")
 pcontract = raw_input("Provider Contract: " )
 ccontract = raw_input("Consumer Contract: ")
+
+#READ IN LIST OF VLANS FOR EPGs
 vlans = []
 f = open("vlans.list","r")
-#for vlan in f.read().splitlines():
-#       vlans.append()
 for vlan in f.read().splitlines():
         vlans.append(vlan)
+        
+#ASSOCIATE PROVIDER CONTRACTS PER EPG        
 def assocProvider(vlan,ap,tenant,contract,cookie):
         urltemplate = "https://{{HOST}}/api/node/mo/uni/tn-{{TENANT}}/ap-{{AP}}/epg-{{VLAN}}-EPG.json"
         ut = Template(urltemplate)
@@ -54,6 +57,7 @@ def assocProvider(vlan,ap,tenant,contract,cookie):
         out.append(result.text)
         return out
 
+#ASSOCIATE CONSUMER CONTRACTS PER EPG
 def assocConsumer(vlan,ap,tenant,contract,cookie):
         urltemplate = "https://{{HOST}}/api/node/mo/uni/tn-{{TENANT}}/ap-{{AP}}/epg-{{VLAN}}-EPG.json"
         ut = Template(urltemplate)
@@ -82,6 +86,7 @@ def assocConsumer(vlan,ap,tenant,contract,cookie):
 cookie = getCookie()
 success = 0
 fail = 0
+#ASSOCIATE PROVIDER CONTRACTS
 print "************PROVIDER ASSOCIATIONS************"
 for vlan in vlans:
         result = assocProvider(vlan,ap,tenant,pcontract,cookie)
@@ -101,6 +106,7 @@ print "Provider Failed: "+str(fail)
 success = 0
 fail = 0
 print "*********************************************"
+#ASSOCIATE CONSUMER CONTRACTS
 print "***********CONSUMER ASSOCIATIONS*************"
 for vlan in vlans:
         result = assocConsumer(vlan,ap,tenant,ccontract,cookie)
