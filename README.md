@@ -10,9 +10,9 @@ I must master it as I must master my life.
 My github repo, without me, is useless. 
 
 Without my github repo, I am useless. 
-`------------
-Table of Contents:
-associateContracts.py:      | *Given list of vlans in vlans.list, associate provider and consumer contracts for each EPG*
+>------------
+>Table of Contents:
+>associateContracts.py:      | *Given list of vlans in vlans.list, associate provider and consumer contracts for each EPG*
 associateEPGDomains.py	    | *Given list of vlans in vlans.list, associate Domains for each EPG*
 associateStaticPortsVPC.py  | *Given list of vlans in vlans.list and VPCs in vpcs.list, associate static ports for each VPC*
 createBD.py	                | *Given list of vlans in vlans.list, create Bridge Domains for each EPG*
