@@ -26,7 +26,7 @@ Without my github repo, I am useless.
 
 >getPortStatus.py            | *Given user input, display details of port*
 
-?intprofile.py               | *Given user input range of ports, create port profile for each port in range set to "DISABLED" port profile*
+>intprofile.py               | *Given user input range of ports, create port profile for each port in range set to "DISABLED" port profile*
 
 >listEPGs.py                 | *Given user input, list EPGs under Tenant / Application Profile*
 
