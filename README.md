@@ -16,7 +16,7 @@ Table of Contents:
 associateContracts.py:      | *Given list of vlans in vlans.list, associate provider and consumer contracts for each EPG*
 associateEPGDomains.py	    | *Given list of vlans in vlans.list, associate Domains for each EPG*
 associateStaticPortsVPC.py  | *Given list of vlans in vlans.list and VPCs in vpcs.list, associate static ports for each VPC*
-createBD.py	                | *Given list of vlans in vlans.list, create Bridge Domains for each EPG*
+createBD.py	         | *Given list of vlans in vlans.list, create Bridge Domains for each EPG*
 createEPG.py                | *Given list of vlans in vlans.list, create EPGs for each vlan*
 getPortStatus.py            | *Given user input, display details of port*
 intprofile.py               | *Given user input range of ports, create port profile for each port in range set to "DISABLED" port profile*
