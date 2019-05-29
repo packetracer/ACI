@@ -23,8 +23,6 @@ tenant = raw_input("Tenant Name: ")
 l3out = raw_input("L3 Out Name: ")
 vlans = []
 f = open("vlans.list","r")
-#for vlan in f.read().splitlines():
-#       vlans.append()
 for vlan in f.read().splitlines():
         vlans.append(vlan)
 
