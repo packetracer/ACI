@@ -13,6 +13,7 @@ Without my github repo, I am useless.
 ------------
 ```
 Table of Contents:
+associateL3OUT.py           | *Given list of vlans in vlans.list, associate L3OUT for each Bridge Domain*
 associateContracts.py:      | *Given list of vlans in vlans.list, associate provider and consumer contracts for each EPG*
 associateEPGDomains.py	    | *Given list of vlans in vlans.list, associate Domains for each EPG*
 associateStaticPortsVPC.py  | *Given list of vlans in vlans.list and VPCs in vpcs.list, associate static ports for each VPC*
